@@ -15,7 +15,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			System.out.println("Test");
+			System.out.println("pp");
 			Model model = new Model();
 			//test
 			FXMLLoader myLoader = new FXMLLoader(getClass().getResource("View.fxml"));
