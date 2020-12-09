@@ -112,16 +112,21 @@ public class Controller {
         colorStatus = !colorStatus;
     }
 
-    public void toggleRunning(ActionEvent f) {
+    public void toggleRunning(ActionEvent f) throws InterruptedException {
         if(isRunning) {
-           // runningButton
+            runningButton.setText("Starten");
         }
+        else {
+            runningButton.setText("Anhalten");
+        }
+        isRunning = !isRunning;
+        loop();
     }
 
     void loop() throws InterruptedException {
         //Der unendliche Loop wird in einen Hintergrund-Thread verschoben, damit die View aktualisiert werden kann
         new Thread(() -> {
-            while (true) {
+            while (isRunning) {
                 try {
                     Thread.sleep(sleepMs);
                 } catch (InterruptedException e) {
