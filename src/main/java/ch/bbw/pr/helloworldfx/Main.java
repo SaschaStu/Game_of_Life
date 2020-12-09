@@ -18,7 +18,6 @@ public class Main extends Application {
 			Model model = new Model();
 			FXMLLoader myLoader = new FXMLLoader(getClass().getResource("View.fxml"));
 			AnchorPane root = myLoader.load();
-
 			Controller controller = myLoader.getController();
 			controller.setModel(model);
 

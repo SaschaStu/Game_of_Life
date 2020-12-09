@@ -17,6 +17,7 @@ import java.io.File;
 import java.util.Scanner;
 
 public class Controller {
+    private boolean isRunning = true;
     private int sleepMs = 1000;
     private int size = 500;
     private int w = 20;
@@ -34,6 +35,8 @@ public class Controller {
     Pane cellField;
     GridPane grid = new GridPane();
     Cell[][] buttons = new Cell[w][h];
+    @FXML
+    Button runningButton;
 
     @FXML
     protected void initialize() {
@@ -100,6 +103,12 @@ public class Controller {
     //Farbumschaltung
     public void toggleColor(ActionEvent f) {
         colorStatus = !colorStatus;
+    }
+
+    public void toggleRunning(ActionEvent f) {
+        if(isRunning) {
+           // runningButton
+        }
     }
 
     void loop() throws InterruptedException {
