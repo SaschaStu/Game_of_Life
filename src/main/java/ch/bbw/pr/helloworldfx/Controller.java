@@ -122,6 +122,10 @@ public class Controller {
         loop();
     }
 
+    public void reset(ActionEvent f){
+
+    }
+
     void loop() throws InterruptedException {
         //Der unendliche Loop wird in einen Hintergrund-Thread verschoben, damit die View aktualisiert werden kann
         new Thread(() -> {
@@ -198,6 +202,8 @@ public class Controller {
         for (int iteration = 1; iteration < turnToLookBack+1; iteration++) {
             if (compare2DBooleanArray(pastGrids[0], pastGrids[iteration])) {
                 System.out.println("BIIIIIIIIIIIIG PP!!! Erweiterung almost done!!! yay");
+                isRunning = !isRunning;
+
             }
         }
     }
