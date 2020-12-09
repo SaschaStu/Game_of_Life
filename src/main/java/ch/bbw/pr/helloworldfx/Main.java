@@ -16,7 +16,7 @@ public class Main extends Application {
 		try {
 
 			Model model = new Model();
-
+			//test
 			FXMLLoader myLoader = new FXMLLoader(getClass().getResource("View.fxml"));
 			AnchorPane root = myLoader.load();
 
