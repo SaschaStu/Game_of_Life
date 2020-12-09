@@ -61,12 +61,11 @@ public class Controller {
                         if(!isRunning){
                             if (buttons[finalI][finalJ].getAge()==0){
                                 buttons[finalI][finalJ].setAge(1);
-                                System.out.println("sniuhiufhidhwiudegwudewho");
                             }else{
                                 buttons[finalI][finalJ].setAge(0);
                             }
                         }
-
+                        setCellColor();
 
 
                     });
