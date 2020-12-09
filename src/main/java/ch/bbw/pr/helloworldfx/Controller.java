@@ -58,8 +58,15 @@ public class Controller {
                     int finalI = i;
                     int finalJ = j;
                     buttons[i][j].setOnAction((ActionEvent event) -> {
-                        //penis();
-                        buttons[finalI][finalJ].setAge(1);
+                        if(!isRunning){
+                            if (buttons[finalI][finalJ].getAge()==0){
+                                buttons[finalI][finalJ].setAge(1);
+                                System.out.println("sniuhiufhidhwiudegwudewho");
+                            }else{
+                                buttons[finalI][finalJ].setAge(0);
+                            }
+                        }
+
 
 
                     });
