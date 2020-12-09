@@ -8,7 +8,7 @@
 <AnchorPane fx:id="anchor" prefHeight="569.0" prefWidth="606.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.bbw.pr.helloworldfx.Controller">
    <children>
       <Pane fx:id="cellField" layoutX="53.0" prefHeight="500.0" prefWidth="500.0" />
-      <Button layoutX="100.0" layoutY="511.0" mnemonicParsing="false" onAction="#toggleRunning" text="Färbung Umschalten" />
+      <Button layoutX="100.0" layoutY="511.0" mnemonicParsing="false" onAction="#toggleColor" text="Färbung Umschalten" />
       <Button fx:id="runningButton" layoutX="294.0" layoutY="511.0" mnemonicParsing="false" onAction="#toggleRunning" text="Anhalten" />
       <Button layoutX="421.0" layoutY="511.0" mnemonicParsing="false" onAction="#reset" text="Reset" />
       <Label layoutX="39.0" layoutY="547.0" prefHeight="17.0" prefWidth="228.0" text="Made by T. Tanner &amp; S. Sturzenegger" />

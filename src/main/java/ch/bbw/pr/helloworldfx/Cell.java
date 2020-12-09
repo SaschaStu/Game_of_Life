@@ -22,16 +22,12 @@ class Cell extends Button {
     public String getNewColor(boolean colorStatus) {
         String newColor = null;
         if(colorStatus) {
-            //Man beachte die fancy concat expression, um weniger Zeilen zu brauchen
             newColor = "-fx-background-color: " + color[(age < maxAge ? age : maxAge)] + "; ";
         }
         else {
             newColor = "-fx-background-color: " + color[(age < 1 ? age : 1)] + "; ";
         }
         return newColor;
-    }
-    public void toggleColor(ActionEvent f) {
-        System.out.println("lol nani!?");
     }
     public void updateAge(int neighbors) {
         if(age==0&&neighbors==3)

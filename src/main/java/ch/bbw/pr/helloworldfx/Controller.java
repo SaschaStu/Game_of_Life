@@ -17,6 +17,8 @@ import java.io.File;
 import java.util.Scanner;
 
 public class Controller {
+
+    //Variablen Deklaration
     private boolean isRunning = true;
     private int sleepMs = 1000;
     private int size = 500;
@@ -40,17 +42,15 @@ public class Controller {
 
     @FXML
     protected void initialize() {
-        //man beachte die kreative Namensgebung
-        File pp = new File("files/5x5.txt");
-        Scanner ppReader;
+        File file1 = new File("files/5x5.txt");
+        Scanner Reader1;
         try {
-            ppReader = new Scanner(pp);
+            Reader1 = new Scanner(file1);
             cellField.getChildren().add(grid);
             grid.setPrefSize(size, size);
-            //grid.getChildren().add(new Button("Click me!"));
             for (int j = 0; j < h; j++) {
                 for (int i = 0; i < w; i++) {
-                    buttons[i][j] = new Cell(ppReader.nextInt());
+                    buttons[i][j] = new Cell(Reader1.nextInt());
                     buttons[i][j].setPrefHeight(size / h);
                     buttons[i][j].setPrefWidth(size / w);
                     buttons[i][j].setMaxHeight(size / h);
@@ -74,9 +74,7 @@ public class Controller {
 
             }
         } catch (FileNotFoundException fileEx) {
-            System.out.println("*Loud screaming* AAAAAAAAAAAAAAAAAAAAAAAAAAAAH! We are all gonna the the path is not a fileeeee\n" +
-                    "WHAT DID YOU DO!\n" +
-                    "Everyone, Evacuate! I repeat, Evacuate!!!!!!!\n");
+            System.out.println("Error Controller 77 ");
         }
         //Boolean-Array für vergangenen Felder wird leer initialisiert. Wenn falls sich das erste Feld um ein leeres handelt, wird ein Muster erkennt,
         //da es dem Boolean-Array gleicht, obwohl noch keine Iteration durchgeführt wurde. Das macht aber nichts, da bei einem leeren Feld es sich immer um
@@ -91,26 +89,14 @@ public class Controller {
         }
         setCellColor();
     }
-/*
-    public void penis() {
-        for (int i = 0; i < w; i++) {
-            for (int j = 0; j < h; j++) {
-                if (buttons[i][j].isPressed()) {
-                    buttons[i][j].setAge(1);
-                    System.out.println("penis3333333333333333");
-                }
-            }
-        }
-        System.out.println("penis");
-    }
-
- */
 
     //Farbumschaltung
     public void toggleColor(ActionEvent f) {
         colorStatus = !colorStatus;
+        setCellColor();
     }
 
+    //Umschaltung Start/Stop
     public void toggleRunning(ActionEvent f) throws InterruptedException {
         if(isRunning) {
             runningButton.setText("Starten");
@@ -123,7 +109,13 @@ public class Controller {
     }
 
     public void reset(ActionEvent f){
+        for (int j = 0; j < h; j++) {
+            for (int i = 0; i < w; i++) {
+                buttons[i][j].setAge(0);
+            }
 
+        }
+        setCellColor();
     }
 
     void loop() throws InterruptedException {
@@ -160,7 +152,6 @@ public class Controller {
         for (int i = 0; i < w; i++) {
             for (int j = 0; j < h; j++) {
                 buttons[i][j].updateAge(countNeighbors(i, j));
-                //buttons[i][j].setText("" + countNeighbors(i, j));
             }
         }
         for (int i = 0; i < w; i++) {
@@ -201,8 +192,10 @@ public class Controller {
         System.out.println("---------------------------------------------------------------------------");
         for (int iteration = 1; iteration < turnToLookBack+1; iteration++) {
             if (compare2DBooleanArray(pastGrids[0], pastGrids[iteration])) {
-                System.out.println("BIIIIIIIIIIIIG PP!!! Erweiterung almost done!!! yay");
                 isRunning = !isRunning;
+                System.out.println("Erweiterung Done.");
+
+
 
             }
         }
