@@ -138,12 +138,14 @@ public class Controller {
         nextRound();
         setCellColor();
         saveCurrentGrid();
-
+        //War beim Codeing relevant bzw hilfreich, aus Optischen Gründen aber später entfernt.
+        /*
         for (int i = 0; i < w; i++) {
             for (int j = 0; j < h; j++) {
                 buttons[i][j].setText(""+buttons[i][j].getAge());
             }
         }
+        */
 
 
     }
