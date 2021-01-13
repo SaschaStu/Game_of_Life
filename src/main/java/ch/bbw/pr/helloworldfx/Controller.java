@@ -184,6 +184,7 @@ public class Controller {
                 pastGrids[0][i][j] = (buttons[i][j].getAge() == 0 ? false : true);
             }
         }
+        //visuelle Abtrennung der vergangenen Felder
         printPastGrid(0);
         System.out.println("---------------------------------------------------------------------------");
         printPastGrid(1);
@@ -204,10 +205,17 @@ public class Controller {
     }
 
     public int countNeighbors(int x, int y) {
+        /* Diese methode prüft, wie viele Nachbarn eine Zelle
+        mit den Koordinaten x und y in einem Umkreis von 1 hat
+         */
         int neighbors = 0;
         for (int i = -1; i <= 1; i++) {
             for (int j = -1; j <= 1; j++) {
+                //verhindert, ArrayOutOfBoundsExceptions
                 if (i + x >= 0 && i + x < w && j + y >= 0 && j + y < h) {
+                    /*prüft, ob die Zelle mit den Koordinaten i und j ein Alter grösser als 0 und mindestens
+                    eine unterschiedliche Koordinate zur Zelle mit den Koordinaten x und y hat
+                     */
                     if (buttons[x + i][y + j].getAge() > 0 && (i != 0 || j != 0)) {
                         neighbors++;
                     }
@@ -223,6 +231,7 @@ public class Controller {
     }
     //Funktion um 2D-boolean-Array zu vergleichen, hier primär die pastGrids
     public boolean compare2DBooleanArray(boolean[][] array1, boolean[][] array2) {
+        //Prüft, ob die Dimensionen der beiden Arrays übereinstimmen
         if(array1.length!=array2.length||array1[0].length!=array2[0].length) {
             System.out.println("Länge der Arrays stimmt nicht überrein!");
             return false;
@@ -240,11 +249,12 @@ public class Controller {
         System.out.println("Die Arrays sind gleich!");
         return true;
     }
-    //für debugging der Mustererkennung
+    //für debugging der Mustererkennung in der Konsole
     public void printPastGrid(int iteration) {
         for (int j = 0; j < h; j++) {
             for (int i = 0; i < w; i++) {
                 if(pastGrids[iteration][i][j]==true) {
+                    //färbe lebendige Zellen rot
                     System.out.print("\u001B[31m " + 1+ "\u001B[0m");
                 }
                 else {
