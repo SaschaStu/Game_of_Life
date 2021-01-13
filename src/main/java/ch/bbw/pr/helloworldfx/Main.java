@@ -23,7 +23,7 @@ public class Main extends Application {
 
 			Scene scene = new Scene(root,600,700);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			primaryStage.setTitle("Open the Gate!");
+			primaryStage.setTitle("Game of Life");
 			primaryStage.setScene(scene);
 			primaryStage.show();
 			Thread.sleep(4000);
