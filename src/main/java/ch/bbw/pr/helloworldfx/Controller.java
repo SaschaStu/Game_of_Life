@@ -16,6 +16,12 @@ import java.util.Scanner;
 import java.io.File;
 import java.util.Scanner;
 
+
+/**
+ * @author S. Sturzenegger & T. Tanner
+ * @version 16.01.2021
+ */
+
 public class Controller {
 
     //Variablen Deklaration

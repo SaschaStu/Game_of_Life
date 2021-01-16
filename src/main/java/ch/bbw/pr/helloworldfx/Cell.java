@@ -5,6 +5,12 @@ import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 
+
+/**
+ * @author S. Sturzenegger & T. Tanner
+ * @version 16.01.2021
+ */
+
 class Cell extends Button {
     final String[] color = {"#e6e6e6","#eaff00","#ffe100", "#ffa200","#ff7700","#ff5100","#ff2f00","#ff1900","#ff0000"};
     private int age;

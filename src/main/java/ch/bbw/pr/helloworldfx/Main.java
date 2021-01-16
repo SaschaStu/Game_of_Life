@@ -11,6 +11,12 @@ import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 
 
+/**
+ * @author S. Sturzenegger & T. Tanner
+ * @version 16.01.2021
+ */
+
+
 public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
